@@ -1,0 +1,22 @@
+{
+  "name": "git-copy-file-folder",
+  "description": "Copy a file or folder from a Git repo instead of cloning, i.e. without a connection to the source",
+  "keywords": [],
+  "author": {
+    "name": "hh lohmann",
+    "email": "hh.lohmann@gmail.com"
+  },
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hh-lohmann/git-copy-file-folder.git"
+  },
+  "bugs": "https://github.com/hh-lohmann/git-copy-file-folder/issues",
+  "homepage": "https://hh-lohmann.github.io/git-copy-file-folder",
+  "type": "module",
+  "exports": {
+    "types": "./types.d.ts",
+    "default": "./index.js"
+  }
+}
