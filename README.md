@@ -32,14 +32,14 @@ Helpful to reuse specific contents of another repo in a current one without mixi
 ## Parameters
 
 ### urlOfRepoToCopyFrom
-URL of the repo from which **[fileFolderNamePath](#fileFolderNamePath)** should be copied
+URL of the repo from which **[fileFolderNamePath](#filefoldernamepath)** should be copied
 
 ### fileFolderNamePath
-Name / path for the file / folder to be copied from the **[urlOfRepoToCopyFrom](#urlOfRepoToCopyFrom)**
+Name / path for the file / folder to be copied from the **[urlOfRepoToCopyFrom](#urlofrepotocopyfrom)**
   * Interpreted relative to the source repo's root, i.e. `src/index.js` of repo `x` would be `x/src/index.js`
 
 ### pathToCopyTo
-Optional: Existing path to which **[fileFolderNamePath](#fileFolderNamePath)** should be copied to
+Optional: Existing path to which **[fileFolderNamePath](#filefoldernamepath)** should be copied to
   * Default: current folder
 
 
@@ -92,7 +92,7 @@ Pick for your preferred package manager:
 
   * Only one file / folder per call (multiple files / folders or globbing goes beyond the current time budget for this project)
 
-  * Copying takes place via a temporary [sparse clone](#git-clone---sparse) and a [sparse-checkout](#git-sparse-checkout) there (deleted after copying the file / folder requested)
+  * Copying takes place via a temporary [sparse clone](#git-clone-sparse) and a [sparse-checkout](#git-sparse-checkout) there (deleted after copying the file / folder requested)
 
 
 ## Tests
@@ -112,7 +112,7 @@ Pick for your preferred package manager:
 
 ## References
 
-### Git: clone --sparse
+### Git: clone sparse
   * <https://git-scm.com/docs/git-clone#Documentation/git-clone.txt---sparse>
 
 ### Git: sparse-checkout
