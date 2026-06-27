@@ -18,28 +18,33 @@ Helpful to reuse specific contents of another repo in a current one without mixi
 </p>
 
 
+## Caution
+
+  * Does not check if a file / folder with the same name already exists in your target - this is up to you, especially in case you explicitly want to overwrite / reset existing files (cf. [Details](#details))
+
+
 ## Synopsis
 
 ```js
   import { gitCopyFileFolder } from 'git-copy-file-folder'
 
-  gitCopyFileFolder( urlOfRepoToCopyFrom, fileFolderNamePath)
+  gitCopyFileFolder( sourceRepo, fileOrFolder)
 
-  gitCopyFileFolder( urlOfRepoToCopyFrom, fileFolderNamePath, pathToCopyTo )
+  gitCopyFileFolder( sourceRepo, fileOrFolder, targetPath )
 ```
 
 
 ## Parameters
 
-### urlOfRepoToCopyFrom
-URL of the repo from which **[fileFolderNamePath](#filefoldernamepath)** should be copied
+### sourceRepo
+URL of the repo from which **[fileOrFolder](#fileorfolder)** should be copied
 
-### fileFolderNamePath
-Name / path for the file / folder to be copied from the **[urlOfRepoToCopyFrom](#urlofrepotocopyfrom)**
+### fileOrFolder
+Name / path for the file / folder to be copied from the **[sourceRepo](#sourcerepo)**
   * Interpreted relative to the source repo's root, i.e. `src/index.js` of repo `x` would be `x/src/index.js`
 
-### pathToCopyTo
-Optional: Existing path to which **[fileFolderNamePath](#filefoldernamepath)** should be copied to
+### targetPath
+Optional: Existing path to which **[fileOrFolder](#fileorfolder)** should be copied to
   * Default: current folder
 
 
@@ -91,6 +96,8 @@ Pick for your preferred package manager:
 ## Details
 
   * Only one file / folder per call (multiple files / folders or globbing goes beyond the current time budget for this project)
+
+  * Does not check if a file / folder with the same name already exists in your target before probably overwriting it, partly for simplicity, partly to give surrounding code full control about e.g. deciding if overwriting an old version with a newer one or a diverged / corrupted version with the original one may be explicitly intended. 
 
   * Copying takes place via a temporary [sparse clone](#git-clone-sparse) and a [sparse-checkout](#git-sparse-checkout) there (deleted after copying the file / folder requested)
 
