@@ -6,7 +6,7 @@
     "name": "hh lohmann",
     "email": "hh.lohmann@gmail.com"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -23,6 +23,6 @@
     "test": "node --test ./tests/**/*.test.*"
   },
   "dependencies": {
-    "node-test-bootstrap": "github:hh-lohmann/node-test-bootstrap"
+    "node-test-bootstrap": "node-test-bootstrap"
   }
 }
